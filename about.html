@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - BrightWeb</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+  </head>
+  <body class="about-page">
+    <!-- Header Section -->
+    <header id="header">
+      <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <span class="brand-text">BrightWeb</span>
+          </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                  Shop
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="products.html?category=shoes">Shoes</a></li>
+                  <li><a class="dropdown-item" href="products.html?category=watches">Watches</a></li>
+                  <li><a class="dropdown-item" href="products.html?category=jackets">Jackets</a></li>
+                  <li><a class="dropdown-item" href="products.html?category=perfumes">Perfumes</a></li>
+                  <li><a class="dropdown-item" href="products.html?category=accessories">Accessories</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="products.html">All Products</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <div class="navbar-nav ms-auto nav-icons">
+              <a class="nav-link" href="#" id="searchIcon">
+                <i class="fas fa-search"></i>
+              </a>
+              <a class="nav-link" href="#" id="userIcon">
+                <i class="fas fa-user"></i>
+              </a>
+              <a class="nav-link position-relative" href="cart.html" id="cartIcon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <!-- Search Overlay -->
+      <div id="searchOverlay" class="search-overlay">
+        <div class="container">
+          <div class="search-content">
+            <form class="search-form">
+              <input type="text" placeholder="Search for products...">
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <button id="closeSearch" class="btn-close"></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+      <div class="container">
+        <h1>About Us</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">About Us</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="about-story section-padding">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="about-image">
+              <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Our Story" class="img-fluid rounded">
+            </div>
+          </div>
+          
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="about-content">
+              <h2>Our Story</h2>
+              <p class="lead">Crafting premium fashion experiences since 2015.</p>
+              <p>BrightWeb was founded with a simple yet powerful vision: to create a fashion destination that offers more than just products – we deliver a lifestyle. What began as a small boutique has evolved into a curated online experience, bringing together the finest selection of footwear, accessories, watches, and fragrances.</p>
+              <p>Our philosophy of "Design the Desired" reflects our commitment to not just follow trends, but to anticipate and shape them. We believe that personal style is an expression of individuality, and our collections are carefully selected to help you express yours.</p>
+              <p>From our humble beginnings to our current status as a premium fashion retailer, we've maintained our dedication to quality, craftsmanship, and customer satisfaction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section class="mission-values section-padding bg-light">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2>Our Mission & Values</h2>
+          <p>What drives us every day</p>
+        </div>
+        
+        <div class="row mt-5">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-gem"></i>
+              </div>
+              <h3>Quality</h3>
+              <p>We believe in offering only the highest quality products that meet our rigorous standards. Each item in our collection is carefully selected for its craftsmanship, materials, and design excellence.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h3>Sustainability</h3>
+              <p>We're committed to reducing our environmental impact by partnering with brands that share our values of responsible production, ethical sourcing, and sustainable practices.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3>Customer Focus</h3>
+              <p>Our customers are at the heart of everything we do. We strive to create exceptional shopping experiences, personalized service, and lasting relationships built on trust and satisfaction.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3>Innovation</h3>
+              <p>We constantly seek new ways to improve our products, services, and shopping experience. By embracing innovation, we stay ahead of trends and offer you the latest in fashion and technology.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3>Integrity</h3>
+              <p>We conduct our business with honesty, transparency, and fairness. Our pricing is clear, our product descriptions are accurate, and we stand behind everything we sell.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h3>Diversity</h3>
+              <p>We celebrate diversity in our team, our customers, and our products. Our collections are designed to be inclusive, catering to a wide range of styles, sizes, and preferences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Team Section -->
+    <section class="team-section section-padding">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2>Meet Our Team</h2>
+          <p>The passionate people behind BrightWeb</p>
+        </div>
+        
+        <div class="row g-4 mt-3">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="CEO" class="img-fluid">
+                <div class="social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Alexandra Chen</h4>
+                <span>Founder & CEO</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Creative Director" class="img-fluid">
+                <div class="social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Marcus Johnson</h4>
+                <span>Creative Director</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="https://images.pexels.com/photos/1821095/pexels-photo-1821095.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Head of Design" class="img-fluid">
+                <div class="social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sophia Lee</h4>
+                <span>Head of Design</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Marketing Director" class="img-fluid">
+                <div class="social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>David Rodriguez</h4>
+                <span>Marketing Director</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Partners Section -->
+    <section class="partners-section section-padding bg-light">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2>Our Brand Partners</h2>
+          <p>Collaborating with the world's finest fashion houses</p>
+        </div>
+        
+        <div class="row align-items-center justify-content-center mt-4">
+          <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/200x80/f8f9fa/212529?text=Nike" alt="Nike" class="img-fluid">
+            </div>
+          </div>
+          
+          <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/200x80/f8f9fa/212529?text=Adidas" alt="Adidas" class="img-fluid">
+            </div>
+          </div>
+          
+          <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/200x80/f8f9fa/212529?text=Gucci" alt="Gucci" class="img-fluid">
+            </div>
+          </div>
+          
+          <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/200x80/f8f9fa/212529?text=Puma" alt="Puma" class="img-fluid">
+            </div>
+          </div>
+          
+          <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="500">
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/200x80/f8f9fa/212529?text=Rolex" alt="Rolex" class="img-fluid">
+            </div>
+          </div>
+          
+          <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="600">
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/200x80/f8f9fa/212529?text=Chanel" alt="Chanel" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section section-padding">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2>What Our Customers Say</h2>
+          <p>Read testimonials from our satisfied customers</p>
+        </div>
+        
+        <div class="testimonial-slider" data-aos="fade-up">
+          <div class="testimonial-slide active">
+            <div class="testimonial-content">
+              <div class="testimonial-text">
+                <p>"I've been shopping with BrightWeb for years, and I'm always impressed by their attention to detail and quality products. My favorite purchase has to be their limited edition sneakers, which always receive compliments!"</p>
+              </div>
+              <div class="testimonial-author">
+                <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Customer" class="author-img">
+                <div class="author-info">
+                  <h4>Michael Thompson</h4>
+                  <span>Loyal Customer</span>
+                </div>
+              </div>
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="testimonial-text">
+                <p>"The customer service at BrightWeb is exceptional. I had an issue with sizing, and their team went above and beyond to ensure I got the perfect fit. The quality of their leather goods is unmatched!"</p>
+              </div>
+              <div class="testimonial-author">
+                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Customer" class="author-img">
+                <div class="author-info">
+                  <h4>Emma Garcia</h4>
+                  <span>Fashion Enthusiast</span>
+                </div>
+              </div>
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="testimonial-text">
+                <p>"BrightWeb's collection of watches is impressive. I purchased a timepiece for my husband's birthday, and he was thrilled with the craftsmanship and design. The packaging was exquisite, making it feel like a truly special gift."</p>
+              </div>
+              <div class="testimonial-author">
+                <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Customer" class="author-img">
+                <div class="author-info">
+                  <h4>Sarah Williams</h4>
+                  <span>Repeat Customer</span>
+                </div>
+              </div>
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-controls">
+          <button class="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+          <div class="testimonial-dots"></div>
+          <button class="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-info">
+                <h3>BrightWeb</h3>
+                <p class="pb-3">Design the Desired</p>
+                <p>
+                  123 Fashion Street <br>
+                  New York, NY 10001, USA<br><br>
+                  <strong>Phone:</strong> +1 234 567 8900<br>
+                  <strong>Email:</strong> info@brightweb.com<br>
+                </p>
+                <div class="social-links mt-3">
+                  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a>
+                  <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Shop</h4>
+              <ul>
+                <li><a href="products.html?category=shoes">Shoes</a></li>
+                <li><a href="products.html?category=watches">Watches</a></li>
+                <li><a href="products.html?category=jackets">Jackets</a></li>
+                <li><a href="products.html?category=perfumes">Perfumes</a></li>
+                <li><a href="products.html?category=accessories">Accessories</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Information</h4>
+              <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Our Newsletter</h4>
+              <p>Stay updated with our latest collections and exclusive offers</p>
+              <form action="" method="post">
+                <input type="email" name="email" placeholder="Your email">
+                <input type="submit" value="Subscribe">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>BrightWeb</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a href="#">BrightWeb</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart" class="close-cart">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items will be added dynamically -->
+        <div class="empty-cart">
+          <i class="fas fa-shopping-bag"></i>
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <a href="cart.html" class="btn btn-primary w-100">Checkout</a>
+        <button class="btn btn-outline-secondary w-100 mt-2">Continue Shopping</button>
+      </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

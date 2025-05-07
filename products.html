@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - BrightWeb</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Range Slider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+  </head>
+  <body class="products-page">
+    <!-- Header Section -->
+    <header id="header">
+      <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <span class="brand-text">BrightWeb</span>
+          </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                  Shop
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="products.html?category=shoes">Shoes</a></li>
+                  <li><a class="dropdown-item" href="products.html?category=watches">Watches</a></li>
+                  <li><a class="dropdown-item" href="products.html?category=jackets">Jackets</a></li>
+                  <li><a class="dropdown-item" href="products.html?category=perfumes">Perfumes</a></li>
+                  <li><a class="dropdown-item" href="products.html?category=accessories">Accessories</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="products.html">All Products</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <div class="navbar-nav ms-auto nav-icons">
+              <a class="nav-link" href="#" id="searchIcon">
+                <i class="fas fa-search"></i>
+              </a>
+              <a class="nav-link" href="#" id="userIcon">
+                <i class="fas fa-user"></i>
+              </a>
+              <a class="nav-link position-relative" href="cart.html" id="cartIcon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <!-- Search Overlay -->
+      <div id="searchOverlay" class="search-overlay">
+        <div class="container">
+          <div class="search-content">
+            <form class="search-form">
+              <input type="text" placeholder="Search for products...">
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <button id="closeSearch" class="btn-close"></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+      <div class="container">
+        <h1 id="categoryTitle">All Products</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="products.html">Shop</a></li>
+            <li class="breadcrumb-item active" id="breadcrumbCategory" aria-current="page">All Products</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section section-padding">
+      <div class="container">
+        <div class="row">
+          <!-- Filter Sidebar -->
+          <div class="col-lg-3">
+            <div class="filter-sidebar" data-aos="fade-right">
+              <div class="filter-header d-flex d-lg-none justify-content-between align-items-center mb-3">
+                <h3>Filters</h3>
+                <button class="btn-close" id="closeFilters"></button>
+              </div>
+              
+              <div class="filter-group">
+                <h3>Categories</h3>
+                <ul class="filter-categories">
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input category-filter" type="checkbox" value="shoes" id="categoryShoes">
+                      <label class="form-check-label" for="categoryShoes">
+                        Shoes
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input category-filter" type="checkbox" value="watches" id="categoryWatches">
+                      <label class="form-check-label" for="categoryWatches">
+                        Watches
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input category-filter" type="checkbox" value="jackets" id="categoryJackets">
+                      <label class="form-check-label" for="categoryJackets">
+                        Jackets
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input category-filter" type="checkbox" value="perfumes" id="categoryPerfumes">
+                      <label class="form-check-label" for="categoryPerfumes">
+                        Perfumes
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input category-filter" type="checkbox" value="accessories" id="categoryAccessories">
+                      <label class="form-check-label" for="categoryAccessories">
+                        Accessories
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="filter-group">
+                <h3>Price Range</h3>
+                <div id="priceRange"></div>
+                <div class="price-inputs mt-2">
+                  <input type="text" id="priceMin" class="price-input" readonly>
+                  <span>-</span>
+                  <input type="text" id="priceMax" class="price-input" readonly>
+                </div>
+              </div>
+              
+              <div class="filter-group">
+                <h3>Colors</h3>
+                <div class="color-options filter-colors">
+                  <div class="color-option" data-color="black" style="background-color: #000;"></div>
+                  <div class="color-option" data-color="white" style="background-color: #fff; border: 1px solid #ddd;"></div>
+                  <div class="color-option" data-color="red" style="background-color: #e74c3c;"></div>
+                  <div class="color-option" data-color="blue" style="background-color: #3498db;"></div>
+                  <div class="color-option" data-color="green" style="background-color: #2ecc71;"></div>
+                  <div class="color-option" data-color="yellow" style="background-color: #f1c40f;"></div>
+                  <div class="color-option" data-color="brown" style="background-color: #795548;"></div>
+                  <div class="color-option" data-color="grey" style="background-color: #95a5a6;"></div>
+                </div>
+              </div>
+              
+              <div class="filter-group">
+                <h3>Size</h3>
+                <div class="size-options filter-sizes">
+                  <div class="size-option" data-size="XS">XS</div>
+                  <div class="size-option" data-size="S">S</div>
+                  <div class="size-option" data-size="M">M</div>
+                  <div class="size-option" data-size="L">L</div>
+                  <div class="size-option" data-size="XL">XL</div>
+                  <div class="size-option" data-size="XXL">XXL</div>
+                </div>
+              </div>
+              
+              <div class="filter-group">
+                <h3>Brand</h3>
+                <ul class="filter-brands">
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input brand-filter" type="checkbox" value="nike" id="brandNike">
+                      <label class="form-check-label" for="brandNike">
+                        Nike
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input brand-filter" type="checkbox" value="adidas" id="brandAdidas">
+                      <label class="form-check-label" for="brandAdidas">
+                        Adidas
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input brand-filter" type="checkbox" value="puma" id="brandPuma">
+                      <label class="form-check-label" for="brandPuma">
+                        Puma
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input brand-filter" type="checkbox" value="rolex" id="brandRolex">
+                      <label class="form-check-label" for="brandRolex">
+                        Rolex
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input brand-filter" type="checkbox" value="chanel" id="brandChanel">
+                      <label class="form-check-label" for="brandChanel">
+                        Chanel
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input brand-filter" type="checkbox" value="gucci" id="brandGucci">
+                      <label class="form-check-label" for="brandGucci">
+                        Gucci
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="filter-group">
+                <h3>Rating</h3>
+                <ul class="filter-ratings">
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input rating-filter" type="checkbox" value="5" id="rating5">
+                      <label class="form-check-label" for="rating5">
+                        <div class="stars">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input rating-filter" type="checkbox" value="4" id="rating4">
+                      <label class="form-check-label" for="rating4">
+                        <div class="stars">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="far fa-star"></i>
+                        </div>
+                        <span>& Up</span>
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input rating-filter" type="checkbox" value="3" id="rating3">
+                      <label class="form-check-label" for="rating3">
+                        <div class="stars">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="far fa-star"></i>
+                          <i class="far fa-star"></i>
+                        </div>
+                        <span>& Up</span>
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input rating-filter" type="checkbox" value="2" id="rating2">
+                      <label class="form-check-label" for="rating2">
+                        <div class="stars">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="far fa-star"></i>
+                          <i class="far fa-star"></i>
+                          <i class="far fa-star"></i>
+                        </div>
+                        <span>& Up</span>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <button id="clearFilters" class="btn btn-outline-primary w-100 mt-3">Clear All Filters</button>
+            </div>
+          </div>
+          
+          <!-- Products Grid -->
+          <div class="col-lg-9">
+            <div class="products-header" data-aos="fade-up">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <button class="btn btn-filter d-lg-none" id="showFilters">
+                  <i class="fas fa-filter me-2"></i>Filters
+                </button>
+                
+                <div class="products-count">
+                  <span id="productCount">0</span> Products Found
+                </div>
+                
+                <div class="products-sort">
+                  <select class="form-select" id="sortOptions">
+                    <option value="featured">Featured</option>
+                    <option value="newest">Newest</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="active-filters" id="activeFilters">
+                <!-- Active filters will be added here dynamically -->
+              </div>
+            </div>
+            
+            <div class="row g-4" id="productsGrid" data-aos="fade-up">
+              <!-- Products will be loaded dynamically -->
+              <div class="col-12 text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">Loading products...</p>
+              </div>
+            </div>
+            
+            <div class="pagination-container mt-5" data-aos="fade-up">
+              <nav aria-label="Product pagination">
+                <ul class="pagination justify-content-center" id="pagination">
+                  <!-- Pagination links will be added dynamically -->
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-info">
+                <h3>BrightWeb</h3>
+                <p class="pb-3">Design the Desired</p>
+                <p>
+                  123 Fashion Street <br>
+                  New York, NY 10001, USA<br><br>
+                  <strong>Phone:</strong> +1 234 567 8900<br>
+                  <strong>Email:</strong> info@brightweb.com<br>
+                </p>
+                <div class="social-links mt-3">
+                  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a>
+                  <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Shop</h4>
+              <ul>
+                <li><a href="products.html?category=shoes">Shoes</a></li>
+                <li><a href="products.html?category=watches">Watches</a></li>
+                <li><a href="products.html?category=jackets">Jackets</a></li>
+                <li><a href="products.html?category=perfumes">Perfumes</a></li>
+                <li><a href="products.html?category=accessories">Accessories</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Information</h4>
+              <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Our Newsletter</h4>
+              <p>Stay updated with our latest collections and exclusive offers</p>
+              <form action="" method="post">
+                <input type="email" name="email" placeholder="Your email">
+                <input type="submit" value="Subscribe">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>BrightWeb</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a href="#">BrightWeb</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="row g-0">
+              <div class="col-md-6">
+                <div class="quick-view-image">
+                  <img src="" alt="Product" id="quickViewImage">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="quick-view-content">
+                  <h2 id="quickViewTitle"></h2>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span id="quickViewRating"></span>
+                  </div>
+                  <div class="product-price">
+                    <span class="current-price" id="quickViewPrice"></span>
+                    <span class="old-price" id="quickViewOldPrice"></span>
+                  </div>
+                  <div class="product-description">
+                    <p id="quickViewDescription"></p>
+                  </div>
+                  <div class="product-size">
+                    <h5>Size:</h5>
+                    <div class="size-options" id="quickViewSizes">
+                      <!-- Sizes will be added dynamically -->
+                    </div>
+                  </div>
+                  <div class="product-color">
+                    <h5>Color:</h5>
+                    <div class="color-options" id="quickViewColors">
+                      <!-- Colors will be added dynamically -->
+                    </div>
+                  </div>
+                  <div class="product-quantity">
+                    <h5>Quantity:</h5>
+                    <div class="quantity-selector">
+                      <button class="quantity-btn" id="decreaseQuantity">-</button>
+                      <input type="number" value="1" min="1" id="quickViewQuantity">
+                      <button class="quantity-btn" id="increaseQuantity">+</button>
+                    </div>
+                  </div>
+                  <div class="product-action">
+                    <button class="btn btn-primary" id="quickViewAddToCart">Add to Cart</button>
+                    <button class="btn btn-outline-secondary" id="quickViewWishlist">
+                      <i class="far fa-heart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart" class="close-cart">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items will be added dynamically -->
+        <div class="empty-cart">
+          <i class="fas fa-shopping-bag"></i>
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <a href="cart.html" class="btn btn-primary w-100">Checkout</a>
+        <button class="btn btn-outline-secondary w-100 mt-2">Continue Shopping</button>
+      </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- noUiSlider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>
