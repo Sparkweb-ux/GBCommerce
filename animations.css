@@ -1,0 +1,346 @@
+/* ===== ANIMATIONS ===== */
+
+/* Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Fade In Down */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.5s ease forwards;
+}
+
+/* Fade In Left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.5s ease forwards;
+}
+
+/* Fade In Right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.5s ease forwards;
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 0.5s ease forwards;
+}
+
+/* Button Pulse */
+@keyframes btnPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(10, 36, 99, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(10, 36, 99, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(10, 36, 99, 0);
+  }
+}
+
+.btn-pulse {
+  animation: btnPulse 1.5s infinite;
+}
+
+/* Fade In Text */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Hover Effect */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+  transition: left 0.8s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Product Card Hover Effect */
+.product-card .product-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 36, 99, 0.1);
+  opacity: 0;
+  transition: opacity var(--transition-default);
+}
+
+.product-card:hover .product-image::after {
+  opacity: 1;
+}
+
+/* Category Card Hover Animation */
+.category-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(10, 36, 99, 0.7), rgba(10, 36, 99, 0));
+  opacity: 0;
+  transition: opacity var(--transition-default);
+}
+
+.category-card:hover::after {
+  opacity: 1;
+}
+
+/* Navigation Link Hover Effect */
+.navbar-light .navbar-nav .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: all var(--transition-default);
+  transform: translateX(-50%);
+}
+
+.navbar-light .navbar-nav .nav-link:hover::before,
+.navbar-light .navbar-nav .nav-link.active::before {
+  width: 50%;
+}
+
+/* Section Headers Animation */
+.section-header h2 {
+  position: relative;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary);
+  transform: translateX(-50%);
+}
+
+/* Instagram Hover Effect */
+.instagram-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(10, 36, 99, 0.8), rgba(216, 49, 91, 0.8));
+  opacity: 0;
+  transition: opacity var(--transition-default);
+}
+
+.instagram-item:hover::before {
+  opacity: 1;
+}
+
+.instagram-overlay i {
+  transition: transform var(--transition-default);
+}
+
+.instagram-item:hover .instagram-overlay i {
+  transform: scale(1.2);
+}
+
+/* Team Member Hover Animation */
+.team-member .social a {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.team-member:hover .social a {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.team-member:hover .social a:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.team-member:hover .social a:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+/* Search Animation */
+.search-overlay {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.search-form input {
+  animation: fadeInDown 0.3s ease forwards;
+}
+
+/* Cart Sidebar Animation */
+.cart-sidebar {
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.cart-sidebar.active {
+  transform: translateX(0);
+}
+
+/* Back to Top Button Animation */
+.back-to-top {
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-5px);
+}
+
+/* Value Card Hover Effect */
+.value-card .value-icon {
+  transition: all 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+  transform: scale(1.1) rotate(10deg);
+}
+
+/* Product Filter Transition */
+.filter-colors .color-option,
+.filter-sizes .size-option {
+  transition: all 0.2s ease;
+}
+
+/* Hero Text Animation */
+.hero-slide.active .hero-content h1 {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-slide.active .hero-content p {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.hero-slide.active .hero-content .btn {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.hero-slide .hero-content h1,
+.hero-slide .hero-content p,
+.hero-slide .hero-content .btn {
+  opacity: 0;
+}
+
+/* Shimmer Effect for Loading */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Testimonial Transition */
+.testimonial-slide {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Product Card Hover */
+.product-card:hover .add-to-cart {
+  animation: btnPulse 1.5s;
+}
